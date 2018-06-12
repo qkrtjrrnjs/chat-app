@@ -30,7 +30,7 @@ const styles = {
     
     /*.MessageList .roomAnnouncement h3*/
     
-    h3: {
+    H3: {
         fontSize: '1.5rem',
     },
 
