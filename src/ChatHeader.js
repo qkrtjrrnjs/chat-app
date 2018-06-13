@@ -25,14 +25,14 @@ const styles = {
     },
       
     H2: {
-        fontSize: '1.1rem',
+        fontSize: '1.3rem',
         margin: '0',
     },
     
     P: {
         color: '#999',
         margin: '0',
-        fontSize: '0.8rem',
+        fontSize: '0.9rem',
     },
 }
 
