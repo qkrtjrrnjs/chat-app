@@ -18,7 +18,7 @@ const styles = {
     ChatHeader: {
         backgroundColor: '#f3f3f3',
         borderBottom: '1px solid #ccc',
-        height: '3rem',
+        height: '4rem',
         padding: '0 1rem',
         display: 'flex',
         alignItems: 'center',
