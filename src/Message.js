@@ -7,7 +7,7 @@ const Message = ({message}) => {
 
     return(
         <div className="Message" style={styles.Message}>
-            <Avatar user={message.userName} />
+            <Avatar user={message.user} />
             <div className="Detail" style={styles.Details}>
                 <Metadata message={message} />
                 <div className="body">

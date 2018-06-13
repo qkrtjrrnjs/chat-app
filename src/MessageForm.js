@@ -71,7 +71,7 @@ const styles = {
         display: 'flex',
         alignItems: 'stretch',
         border: '2px solid #999',
-        borderRadius: '0.35rem',
+        borderRadimet: '0.35rem',
         margin: '1rem',
         padding: '0',
         borderColor: 'black',

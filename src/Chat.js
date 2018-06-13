@@ -18,7 +18,7 @@ class Chat extends Component{
         const messages = [...this.state.messages]
         messages.push({
             id: Date.now(), 
-            userName: this.props.user.userName,
+            user: this.props.user,
             time: time,
             body: body,
         })
