@@ -18,6 +18,7 @@ const styles = {
     display: 'flex',
     alignItems: 'stretch',
     height: '100vh',
+    overflowWrap: 'break-word',
 }
 
 export default Main

@@ -17,10 +17,11 @@ const MessageList = (props) => {
 
 const styles = {
     MessageList: {
-        backgroundColor: 'white',
+        backgroundColor: '#c3d7df',
         flex: '1',
         paddingBottom: '1rem',
         overflowY: 'scroll',
+        paddingLeft: '1.5rem',
     },
 
     /*.MessageList .roomAnnouncement*/
@@ -29,7 +30,6 @@ const styles = {
     },
     
     /*.MessageList .roomAnnouncement h3*/
-    
     H3: {
         fontSize: '1.5rem',
     },

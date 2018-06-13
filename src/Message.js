@@ -5,7 +5,12 @@ const Message = (props) => {
     return(
         <div className="Message" style={styles.Message}>
             <div className="Detail" style={styles.Details}>
-                {props.message.userName}: {props.message.body}
+                <span style={styles.UserName}>
+                    {props.message.userName}
+                </span>
+                <span style={styles.Time}>
+                </span><br/>
+                {props.message.body}
             </div>
         </div>
     )
@@ -16,11 +21,21 @@ const styles = {
         display: 'flex',
         marginTop: '1rem',
         padding: '0 1rem',
+        overflowWrap: 'break-word',
     },
       
     Details: {
         flex: '1',
         paddingLeft: '0.5rem',
+    },
+
+    UserName: {
+        fontWeight: 'bold',
+        fontSize: '1.1rem',
+    },
+
+    Time: {
+
     },
 }
 

@@ -9,8 +9,8 @@ class Chat extends Component{
         super()
         this.state = {
             messages: [
-                { id: 1, userName: 'chris', body: 'abcdefghijk'},
-                { id: 2, userName: 'James', body: 'lol'},
+                { id: 1, userName: 'chris', body: 'Hello World!'},
+                { id: 2, userName: 'James', body: 'Hello Chris!'},
             ],
         }
     }

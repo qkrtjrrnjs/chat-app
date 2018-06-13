@@ -6,6 +6,8 @@ class MessageForm extends Component{
         body: '',
     }
 
+    time = new Date()
+
     handleSubmit = (ev) => {
         ev.preventDefault()
         if(this.state.body === ''){
@@ -45,7 +47,6 @@ class MessageForm extends Component{
 
 const styles = {
     MessageForm: {
-        backgroundColor: 'white',
         height: '2.3rem',
         display: 'flex',
         alignItems: 'stretch',
