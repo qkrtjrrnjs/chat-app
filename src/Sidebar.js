@@ -7,6 +7,14 @@ const Sidebar = (props) => {
             className="Sidebar"
             style={styles.sidebar}
         >
+            <h1
+                style={{
+                    ...styles.children,
+                    ...styles.h1,
+                }}
+            >
+                XTBC 18
+            </h1>
             <div
                 className="UserInfo"
                 style={styles.children}
@@ -19,23 +27,15 @@ const Sidebar = (props) => {
                     <i className="fas fa-sign-out-alt"></i>
                 </a>
             </div>
-            <h1
-                style={{
-                    ...styles.children,
-                    ...styles.h1,
-                }}
-            >
-                XTBC 18
-            </h1>
                 <nav
                     className="RoomList"
                     style={styles.children}
                 >
-                <h2>Rooms</h2>
-                <ul>
-                    <li><a href="#">general</a></li>
-                    <li><a href="#">random</a></li>
-                </ul>
+                    <h2>Rooms</h2>
+                    <ul>
+                        <li><a href="#">general</a></li>
+                        <li><a href="#">random</a></li>
+                    </ul>
             </nav>
         </aside>
     )    
@@ -43,10 +43,10 @@ const Sidebar = (props) => {
 }
 
 const styles = {
-    sidebard: {
-        backgroundColor: '#333344',
-        color: 'rgba(255, 255, 255, 0.8)',
-        width: '12rem',
+    sidebar: {
+        backgroundColor: '#6991ac',
+        color: '#f5f5f5',
+        width: '15rem',
         padding: '1rem 0',
         display: 'flex',
         flexDirection: 'column',
@@ -57,7 +57,7 @@ const styles = {
     },
 
     h1: {
-        color: 'white',
+        color: '#f5f5f5',
         fontSize: '1.2rem',
         marginTop: 0,
     },
