@@ -4,19 +4,40 @@ class MessageForm extends Component{
 
     state = {
         body: '',
+        time:'',
     }
 
-    time = new Date()
 
     handleSubmit = (ev) => {
         ev.preventDefault()
+
+        const Time = new Date()
+
+        const getHours = function (){
+            let hour = Time.getHours()
+            if(hour > 12){
+                hour-=12
+            }
+            return hour
+        }
+
+        const getMinutes = function(){
+            let minute = Time.getMinutes()
+            if(minute < 10){
+                minute = '0' + Time.getMinutes()
+            }
+            return minute
+        }
+        
         if(this.state.body === ''){
             //Do nothing
         }else{
-            this.props.addMessage(this.state.body)
+            this.state.time += ` ${getHours()}:${getMinutes()} PM` 
+            this.props.addMessage(this.state.body, this.state.time)
         }
         this.setState({
-            body: ''
+            body: '',
+            time: ''
         })
     }
 
