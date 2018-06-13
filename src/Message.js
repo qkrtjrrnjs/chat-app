@@ -9,6 +9,7 @@ const Message = (props) => {
                     {props.message.userName}
                 </span>
                 <span style={styles.Time}>
+                    {props.message.time}
                 </span><br/>
                 {props.message.body}
             </div>
