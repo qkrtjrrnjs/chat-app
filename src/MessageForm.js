@@ -8,7 +8,11 @@ class MessageForm extends Component{
 
     handleSubmit = (ev) => {
         ev.preventDefault()
-        this.props.addMessage(this.state.body)
+        if(this.state.body === ''){
+            //Do nothing
+        }else{
+            this.props.addMessage(this.state.body)
+        }
         this.setState({
             body: ''
         })
@@ -28,12 +32,12 @@ class MessageForm extends Component{
                 <input 
                     type="text" 
                     name="body" 
-                    placeholder="Enter a message..." 
+                    placeholder="Message" 
                     value={this.state.body}
                     onChange={this.handleChange}
                     style={styles.Input}
                 />
-                <button type="submit" style={styles.Button}>send</button>
+                <button type="submit" style={styles.Button}></button>
             </form>
         )
     }
@@ -42,13 +46,14 @@ class MessageForm extends Component{
 const styles = {
     MessageForm: {
         backgroundColor: 'white',
-        height: '3rem',
+        height: '2.3rem',
         display: 'flex',
         alignItems: 'stretch',
         border: '2px solid #999',
-        borderRadius: '0.5rem',
-        margin: '0.25rem',
+        borderRadius: '0.35rem',
+        margin: '1rem',
         padding: '0',
+        borderColor: 'black',
       },
       
      /*.MessageForm .chatIcon*/
@@ -78,7 +83,7 @@ const styles = {
       /*.MessageForm button*/
        Button: {
         fontSize: '1.5rem',
-        backgroundColor: '#1A8FE3',
+        backgroundColor: 'none',
         color: 'white',
         paddingLeft: '1rem',
         paddingRight: '1rem',
