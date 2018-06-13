@@ -7,7 +7,6 @@ class MessageForm extends Component{
         time:'',
     }
 
-
     handleSubmit = (ev) => {
         ev.preventDefault()
 
