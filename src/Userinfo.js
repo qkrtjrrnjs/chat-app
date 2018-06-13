@@ -7,7 +7,7 @@ const Userinfo = ({ user, signOut }) => {
     return(
         <div 
             className="Userinfo"
-            style={styles.Info}
+            style={styles.info}
         >
             <Avatar user={user} style={styles.avatar} />
             <div className="user" style={styles.user}>

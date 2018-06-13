@@ -12,8 +12,8 @@ const SignOut = ({signOut}) => {
 const styles = StyleSheet.create({
     button: {
         backgroundColor: 'transparent',
-        border: '0',
-        padding: '0',
+        border: 0,
+        padding: 0,
         color: '#eeeeee',
         fontSize: '1.2rem',
         transition: 'color 0.25s ease-out',
