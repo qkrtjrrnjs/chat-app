@@ -1,5 +1,7 @@
 import React from 'react'
 
+import Userinfo from './Userinfo'
+
 const Sidebar = (props) => {
     
     return(
@@ -7,6 +9,7 @@ const Sidebar = (props) => {
             className="Sidebar"
             style={styles.sidebar}
         >
+            <Userinfo user={props.user} />
             <h1
                 style={{
                     ...styles.children,
