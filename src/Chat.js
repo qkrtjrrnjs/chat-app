@@ -13,16 +13,31 @@ class Chat extends Component{
         this.state = {
             messages: [
             ],
-            channel: 'general/messagage',
+            rebaseBinding: null
         }
     }
 
     componentWillMount(){
-        base.syncState(this.state.channel, {
+        this.syncMessages()
+    }
+
+    componentDidUpdate(prevProps){
+        if(prevProps.room.name !== this.props.room.name){
+            this.syncMessages()
+        }
+    }
+
+    syncMessages = () =>{
+        if(this.state.rebaseBinding){
+            base.removeBinding(this.state.rebaseBinding)
+        }
+        const rebaseBinding = base.syncState(`${this.props.room.name}/messages`, {
             context: this, 
             state: 'messages',
             asArray: true,
         })
+
+        this.setState({rebaseBinding})
     }
 
     addMessage = (body, time) => {
@@ -38,7 +53,6 @@ class Chat extends Component{
     }
 
     render(){
-
         return(
             <div 
                 className="Chat"

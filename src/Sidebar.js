@@ -2,8 +2,9 @@ import React from 'react'
 
 import Userinfo from './Userinfo'
 import RoomList from './RoomList'
+import { load } from 'grpc';
 
-const Sidebar = ({ user, signOut, channel }) => {
+const Sidebar = ({ user, signOut, loadRoom }) => {
     
     return(
         <aside
@@ -12,7 +13,7 @@ const Sidebar = ({ user, signOut, channel }) => {
         >
             <Userinfo user={user} signOut={signOut}/>
             <h1 style={styles.h1}>XTBC 18</h1>
-            <RoomList channel={channel}/>
+            <RoomList loadRoom={loadRoom}/>
         </aside>
     )    
     

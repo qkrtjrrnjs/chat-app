@@ -1,38 +1,52 @@
-import React from 'react'
+import React, {Component} from 'react'
 import { StyleSheet, css } from 'aphrodite'
 
-const RoomList = ({channel}) => {
+import RoomLink from './RoomLink'
 
-  function handleClickGeneral(ev){
-    ev.preventDefault()
-    channel = channels.general
+class RoomList extends Component{
+  state = {
+    rooms: {
+      general : {
+        name: 'general',
+        description: 'let\'s chat',
+        messages: [],
+      },
+
+      s2morning : {
+        name: 's2morning',
+        description: 'chatter',
+        messages: [],
+      },
+
+      random : {
+        name: 'random',
+        description: 'chaaaat',
+        messages: [],
+      }
+
+    }
   }
 
-  function handleClickRandom(ev){
-    ev.preventDefault()
-    channel = channels.random
+  render(){
+    return (
+      <nav
+        className={`RoomList ${css(styles.nav)}`}
+      >
+        <h2 className={css(styles.h2)}>Rooms</h2>
+        <ul className={css(styles.list)}>
+          {
+            Object.keys(this.state.room).map(roomName => (
+              <RoomLink 
+                key={roomName} 
+                room={this.state.rooms[roomName]} 
+                loadRoom={this.props.loadRoom}
+              />
+            ))
+          }
+        </ul>
+      </nav>
+    )
   }
-
-  return (
-    <nav
-      className={`RoomList ${css(styles.nav)}`}
-    >
-      <h2 className={css(styles.h2)}>Rooms</h2>
-      <ul className={css(styles.list)}>
-        <li className={css(styles.item)}>
-          <a href="##" className={css(styles.link)} onClick={handleClickGeneral}>general</a>
-        </li>
-        <li className={css(styles.item)}>
-          <a href="##" className={css(styles.link)} onClick={handleClickRandom}>random</a>
-        </li>
-      </ul>
-    </nav>
-  )
-}
-
-const channels = {
-  general: 'general/messages',
-  random: 'random/messages',
 }
 
 const styles = StyleSheet.create({
