@@ -2,7 +2,6 @@ import React from 'react'
 
 import Userinfo from './Userinfo'
 import RoomList from './RoomList'
-import { load } from 'grpc';
 
 const Sidebar = ({ user, signOut, loadRoom }) => {
     
