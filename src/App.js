@@ -38,12 +38,12 @@ class App extends Component {
     localStorage.setItem('user', JSON.stringify(user))
   }
 
-  signOut = () => {
-    auth.signOut()
-  }
-
   signedIn = () => {
     return this.state.user.uid
+  }
+
+  signOut = () => {
+    auth.signOut()
   }
 
   handleUnauth = () => {
@@ -55,12 +55,12 @@ class App extends Component {
     return (
       <div className="App">
         {
-          this.signedIn() ?
-          <Main user={this.state.user} signOut={this.signOut} />
-          : <SignIn handleAuth={this.handleAuth} />
+          this.signedIn()
+            ? <Main user={this.state.user} signOut={this.signOut} />
+            : <SignIn />
         }
       </div>
-    );
+    )
   }
 }
 

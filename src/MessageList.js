@@ -25,12 +25,10 @@ const styles = {
         paddingLeft: '1.5rem',
     },
 
-    /*.MessageList .roomAnnouncement*/
     Annoucement: {
         padding: '2rem 1rem',
     },
     
-    /*.MessageList .roomAnnouncement h3*/
     H3: {
         fontSize: '1.5rem',
     },

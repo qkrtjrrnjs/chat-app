@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import { StyleSheet, css } from 'aphrodite'
 
 import RoomLink from './RoomLink'
-import base from './base'
 import RoomForm from './RoomForm'
+import base from './base'
 
 class RoomList extends Component {
   state = {

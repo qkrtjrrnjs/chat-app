@@ -4,19 +4,17 @@ import Avatar from './Avatar'
 import SignOut from './SignOut'
 
 const Userinfo = ({ user, signOut }) => {
-    return(
-        <div 
-            className="Userinfo"
-            style={styles.info}
-        >
-            <Avatar user={user} style={styles.avatar} />
-            <div className="user" style={styles.user}>
-                {user.displayName}
-            </div>
-            <div>
-                <SignOut signOut={signOut}/>
-            </div>
+    return (
+      <div
+        className="UserInfo"
+        style={styles.info}
+      >
+        <Avatar user={user} style={styles.avatar} />
+        <div className="user" style={styles.user}>
+          {user.displayName}
         </div>
+        <SignOut signOut={signOut} />
+      </div>
     )
 }
 

@@ -4,7 +4,6 @@ import 'firebase/auth'
 import Rebase from 're-base'
 
 //initialize firebase
-
 const config = {
     apiKey: "your apiKey",
     authDomain: "your authDomain",

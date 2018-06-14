@@ -1,14 +1,14 @@
 import React from 'react'
 import { StyleSheet, css } from 'aphrodite';
 
-const SignOut = ({signOut}) => {
+const SignOut = ({ signOut }) => {
     return (
-        <button
-            className={css(styles.button)}
-            onClick={signOut}
-        >
-            <i className="fas fa-sign-out-alt"></i>
-        </button>
+      <button
+        className={css(styles.button)}
+        onClick={signOut}
+      >
+        <i className="fas fa-sign-out-alt"></i>
+      </button>
     )
 }
 
