@@ -1,8 +1,6 @@
 import React from 'react'
 import { StyleSheet, css } from 'aphrodite'
 
-import base from './base'
-
 const RoomList = ({channel}) => {
 
   function handleClickGeneral(ev){
