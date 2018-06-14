@@ -3,7 +3,6 @@ import React, {Component} from 'react'
 import ChatHeader from './ChatHeader'
 import MessageList from './MessageList'
 import MessageForm from './MessageForm'
-import Main from './Main'
 
 import base from './base'
 
@@ -61,7 +60,6 @@ class Chat extends Component{
                 <ChatHeader room={this.props.room}/>
                 <MessageList messages={this.state.messages} room={this.props.room}/>
                 <MessageForm addMessage={this.addMessage} />
-                <Main channel={this.state.channel} />
             </div>
         )
     }
