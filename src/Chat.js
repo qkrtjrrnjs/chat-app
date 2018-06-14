@@ -3,6 +3,7 @@ import React, {Component} from 'react'
 import ChatHeader from './ChatHeader'
 import MessageList from './MessageList'
 import MessageForm from './MessageForm'
+import Main from './Main'
 
 import base from './base'
 
@@ -12,11 +13,12 @@ class Chat extends Component{
         this.state = {
             messages: [
             ],
+            channel: 'general/messagage',
         }
     }
 
     componentWillMount(){
-        base.syncState('messages', {
+        base.syncState(this.state.channel, {
             context: this, 
             state: 'messages',
             asArray: true,
@@ -36,6 +38,7 @@ class Chat extends Component{
     }
 
     render(){
+
         return(
             <div 
                 className="Chat"
@@ -44,6 +47,7 @@ class Chat extends Component{
                 <ChatHeader />
                 <MessageList messages={this.state.messages} />
                 <MessageForm addMessage={this.addMessage} />
+                <Main channel={this.state.channel} />
             </div>
         )
     }

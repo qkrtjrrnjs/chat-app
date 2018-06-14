@@ -1,7 +1,20 @@
 import React from 'react'
 import { StyleSheet, css } from 'aphrodite'
 
-const RoomList = () => {
+import base from './base'
+
+const RoomList = ({channel}) => {
+
+  function handleClickGeneral(ev){
+    ev.preventDefault()
+    channel = channels.general
+  }
+
+  function handleClickRandom(ev){
+    ev.preventDefault()
+    channel = channels.random
+  }
+
   return (
     <nav
       className={`RoomList ${css(styles.nav)}`}
@@ -9,14 +22,19 @@ const RoomList = () => {
       <h2 className={css(styles.h2)}>Rooms</h2>
       <ul className={css(styles.list)}>
         <li className={css(styles.item)}>
-          <a href="#" className={css(styles.link)}>general</a>
+          <a href="#" className={css(styles.link)} onClick={handleClickGeneral}>general</a>
         </li>
         <li className={css(styles.item)}>
-          <a href="#" className={css(styles.link)}>random</a>
+          <a href="#" className={css(styles.link)} onClick={handleClickRandom}>random</a>
         </li>
       </ul>
     </nav>
   )
+}
+
+const channels = {
+  general: 'general/messages',
+  random: 'random/messages',
 }
 
 const styles = StyleSheet.create({
