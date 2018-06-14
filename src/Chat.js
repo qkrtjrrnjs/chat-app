@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 
 import ChatHeader from './ChatHeader'
 import MessageList from './MessageList'
@@ -9,6 +9,7 @@ import base from './base'
 class Chat extends Component{
     constructor(){
         super()
+
         this.state = {
             messages: [
             ],
@@ -16,7 +17,7 @@ class Chat extends Component{
         }
     }
 
-    componentWillMount(){
+    componentWillMount() {
         this.syncMessages()
     }
 
@@ -30,13 +31,16 @@ class Chat extends Component{
         if(this.state.rebaseBinding){
             base.removeBinding(this.state.rebaseBinding)
         }
-        const rebaseBinding = base.syncState(`${this.props.room.name}/messages`, {
-            context: this, 
-            state: 'messages',
-            asArray: true,
-        })
+        const rebaseBinding = base.syncState(
+            `${this.props.room.name}/messages`,
+            {
+              context: this,
+              state: 'messages',
+              asArray: true,
+            }
+          )
 
-        this.setState({rebaseBinding})
+          this.setState({ rebaseBinding })
     }
 
     addMessage = (body, time) => {
@@ -44,8 +48,8 @@ class Chat extends Component{
         messages.push({
             id: Date.now(), 
             user: this.props.user,
-            time: time,
-            body: body,
+            time,
+            body,
         })
 
         this.setState({messages}) 

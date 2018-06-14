@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Main from './Main'
 import SignIn from './SignIn'
+import {auth} from './base'
 
 class App extends Component {
   state = {
@@ -15,22 +16,40 @@ class App extends Component {
     if (user) {
       this.setState({ user })
     }
+
+    auth.onAuthStateChanged(
+      user => {
+        if (user) {
+          this.handleAuth(user)
+        } else {
+          this.handleUnauth()
+        }
+      }
+    )
   }
 
-  handleAuth = (user) => {
+  handleAuth = (oauthUser) => {
+    const user = {
+      email: oauthUser.email,
+      uid: oauthUser.uid,
+      displayName: oauthUser.displayName,
+    }
     this.setState({ user })
     localStorage.setItem('user', JSON.stringify(user))
+  }
+
+  signOut = () => {
+    auth.signOut()
   }
 
   signedIn = () => {
     return this.state.user.uid
   }
 
-  signOut = () => {
+  handleUnauth = () => {
     this.setState({ user: {} })
     localStorage.removeItem('user')
   }
-
 
   render() {
     return (

@@ -21,25 +21,29 @@ class RoomList extends Component {
     )
   }
 
+  showRoomForm = () => {
+    this.setState({ showRoomForm: true })
+  }
+
+  hideRoomForm = () => {
+    this.setState({ showRoomForm: false })
+  }
+
   addRoom = (room) => {
     const rooms = {...this.state.rooms}
     rooms[room.name] = room
     this.setState({ rooms })
   }
 
-  showRoomForm = () => {
-    this.setState({showRoomForm: true})
-  }
-
-  hideRoomForm = () => {
-    this.setState({showRoomForm: false})
-  }
-
   render() {
-    if(this.state.showRoomForm){
-      return <RoomForm hideRoomForm={this.hideRoomForm} addRoom={this.addRoom}/>
-    }
-    else{
+    if (this.state.showRoomForm) {
+      return (
+        <RoomForm
+          hideRoomForm={this.hideRoomForm}
+          addRoom={this.addRoom}
+        />
+      )
+    } else {
       return (
         <nav
           className={`RoomList ${css(styles.nav)}`}

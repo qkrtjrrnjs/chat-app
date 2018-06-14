@@ -3,7 +3,10 @@ import { StyleSheet, css } from 'aphrodite';
 
 const SignOut = ({signOut}) => {
     return (
-        <button className={css(styles.button)} onClick={signOut}>
+        <button
+            className={css(styles.button)}
+            onClick={signOut}
+        >
             <i className="fas fa-sign-out-alt"></i>
         </button>
     )
@@ -11,18 +14,19 @@ const SignOut = ({signOut}) => {
 
 const styles = StyleSheet.create({
     button: {
-        backgroundColor: 'transparent',
-        border: 0,
-        padding: 0,
-        color: '#eeeeee',
-        fontSize: '1.2rem',
-        transition: 'color 0.25s ease-out',
-
-        ':hover': {
-            color: 'white',
-        }
-    }
-})
+      backgroundColor: 'transparent',
+      border: 0,
+      padding: 0,
+      color: 'rgba(255, 255, 255, 0.6)',
+      fontSize: '1.2rem',
+      transition: 'color 0.25s ease-out',
+  
+      ':hover': {
+        color: 'white',
+        cursor: 'pointer',
+      },
+    },
+  })
 
 export default SignOut
 

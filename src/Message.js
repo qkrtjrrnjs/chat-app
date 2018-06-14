@@ -35,10 +35,6 @@ const styles = {
         fontWeight: 'bold',
         fontSize: '1.1rem',
     },
-
-    Time: {
-
-    },
 }
 
 
