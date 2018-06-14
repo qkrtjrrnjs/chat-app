@@ -25,7 +25,7 @@ const styles = {
         padding: '1rem 0',
         display: 'flex',
         flexDirection: 'column',
-        width: '17vw',
+        width: '16vw',
       },
     
       h1: {

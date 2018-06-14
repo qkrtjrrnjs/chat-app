@@ -20,10 +20,10 @@ const RoomList = ({channel}) => {
       <h2 className={css(styles.h2)}>Rooms</h2>
       <ul className={css(styles.list)}>
         <li className={css(styles.item)}>
-          <a href="#" className={css(styles.link)} onClick={handleClickGeneral}>general</a>
+          <a href="##" className={css(styles.link)} onClick={handleClickGeneral}>general</a>
         </li>
         <li className={css(styles.item)}>
-          <a href="#" className={css(styles.link)} onClick={handleClickRandom}>random</a>
+          <a href="##" className={css(styles.link)} onClick={handleClickRandom}>random</a>
         </li>
       </ul>
     </nav>
