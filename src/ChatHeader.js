@@ -18,21 +18,21 @@ const styles = {
     ChatHeader: {
         backgroundColor: '#f3f3f3',
         borderBottom: '1px solid #ccc',
-        height: '4rem',
+        height: '4.5rem',
         padding: '0 1rem',
         display: 'flex',
         alignItems: 'center',
     },
       
     H2: {
-        fontSize: '1.1rem',
+        fontSize: '1.3rem',
         margin: '0',
     },
     
     P: {
         color: '#999',
         margin: '0',
-        fontSize: '0.8rem',
+        fontSize: '0.9rem',
     },
 }
 
