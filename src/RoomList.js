@@ -9,7 +9,12 @@ class RoomList extends Component {
   state = {
     rooms: {},
     showRoomForm: false,
+    room: {
+        name: 's2morning',
+        description: 'chatter about the actual class'
+    }
   }
+
 
   componentDidMount() {
     base.syncState(
@@ -19,6 +24,7 @@ class RoomList extends Component {
         state: 'rooms',
       }
     )
+    this.addRoom(this.state.room)
   }
 
   showRoomForm = () => {
