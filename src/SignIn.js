@@ -1,8 +1,7 @@
 import React, {Component} from 'react'
 
 import { StyleSheet, css } from 'aphrodite'
-import {auth, googleProvider} from './base'
-import firebase from 'firebase/app'
+import {auth, googleProvider, facebookProvider} from './base'
 
 class SignIn extends Component{
     state = {
@@ -21,22 +20,8 @@ class SignIn extends Component{
       auth.signInWithPopup(googleProvider)
     }
     
-    authenticatePhone = () => {
-      firebase.auth().languageCode = 'it'
-
-      window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container')
-
-      const phoneNumber = "+12016813218"
-      const appVerifier = window.recaptchaVerifier
-      firebase.auth().signInWithPhoneNumber(phoneNumber, appVerifier)
-        .then(function (confirmationResult) {
-          // SMS sent. Prompt user to type the code from the message, then sign the
-          // user in with confirmationResult.confirm(code).
-          window.confirmationResult = confirmationResult;
-        }).catch(function (error) {
-          // Error; SMS not sent
-          // ...
-        });
+    authenticateWithFacebook = () => {
+      auth.signInWithPopup(facebookProvider)
     }
 
 
@@ -82,9 +67,10 @@ class SignIn extends Component{
             <button
               type="button"
               className={css(styles.button)}
-              onClick={this.authenticatePhone}
+              onClick={this.authenticateWithFacebook}
             >
-              Sign in with phone
+              <i class={`fab fa-facebook-f ${css(styles.brandIcon2)}`}></i>
+              Sign in with Facebook
             </button>
           </form>
 
@@ -170,8 +156,12 @@ const styles = StyleSheet.create({
     cursor: 'pointer',
   },
   brandIcon: {
-    marginRight: '1rem',
+    marginRight: '1.6rem',
+  },
+  brandIcon2: {
+    marginRight: '0.5rem',
   }
+
 })
 
 

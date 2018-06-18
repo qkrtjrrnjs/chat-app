@@ -41,7 +41,7 @@ class Chat extends Component{
         )
     
         this.setState({ rebaseBinding })
-      }
+    }
 
     addMessage = (body, time) => {
         const messages = [...this.state.messages]
