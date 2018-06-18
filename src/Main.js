@@ -4,13 +4,36 @@ import Sidebar from './Sidebar'
 import Chat from './Chat'
 
 class Main extends Component{
-    state = {
+
+    constructor() {
+      super()
+
+     this.state = {
+       room: {}
+      }
+    }
+
+    /*state = {
         room: {
           name: 's2morning',
           description: 'Chatter about the actual class',
         }
+    }*/
+
+      componentDidMount() {
+        this.loadRoom({
+          name: this.props.match.params.roomName,
+        })
       }
     
+      componentDidUpdate(prevProps) {
+        if (prevProps.match.params.roomName !== this.props.match.params.roomName) {
+          this.loadRoom({
+            name: this.props.match.params.roomName,
+          })
+        }
+      }
+
       loadRoom = (room) => {
         this.setState({ room })
       }
@@ -21,7 +44,6 @@ class Main extends Component{
             <Sidebar
               user={this.props.user}
               signOut={this.props.signOut}
-              loadRoom={this.loadRoom}
             />
             <Chat
               user={this.props.user}

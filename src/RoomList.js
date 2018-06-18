@@ -9,7 +9,6 @@ import base from './base'
 class RoomList extends Component {
   state = {
     rooms: {},
-    showRoomForm: false,
     room: {
         name: 's2morning',
         description: 'chatter about the actual class'
@@ -28,14 +27,6 @@ class RoomList extends Component {
     this.addRoom(this.state.room)
   }
 
-  showRoomForm = () => {
-    this.setState({ showRoomForm: true })
-  }
-
-  hideRoomForm = () => {
-    this.setState({ showRoomForm: false })
-  }
-
   addRoom = (room) => {
     const rooms = {...this.state.rooms}
     rooms[room.name] = room
@@ -50,7 +41,6 @@ class RoomList extends Component {
           render={
             navProps => (
               <RoomForm
-                  hideRoomForm={this.hideRoomForm}
                   addRoom={this.addRoom}
                   {...navProps}
               />
@@ -78,7 +68,6 @@ class RoomList extends Component {
                       <RoomLink
                         key={roomName}
                         room={this.state.rooms[roomName]}
-                        loadRoom={this.props.loadRoom}
                       />
                     ))
                   }
