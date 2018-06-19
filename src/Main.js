@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 
 import Sidebar from './Sidebar'
 import Chat from './Chat'
+import base from './base'
 
 class Main extends Component{
 
@@ -9,22 +10,27 @@ class Main extends Component{
       super()
 
      this.state = {
-       room: {}
+        room: {},
+        rooms: {}
       }
     }
 
-    /*state = {
-        room: {
-          name: 's2morning',
-          description: 'Chatter about the actual class',
-        }
-    }*/
+    componentDidMount() {
+      base.syncState(
+        'rooms',
+        {
+          context: this,
+          state: 'rooms',
+          then: () => {
 
-      componentDidMount() {
+          },       
+        }
+      )
         this.loadRoom({
           name: this.props.match.params.roomName,
         })
-      }
+    }
+            
     
       componentDidUpdate(prevProps) {
         if (prevProps.match.params.roomName !== this.props.match.params.roomName) {

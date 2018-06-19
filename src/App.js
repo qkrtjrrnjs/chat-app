@@ -60,7 +60,7 @@ class App extends Component {
             path="/sign-in"
             render={navProps => (
               this.signedIn()
-                ? <Redirect to="/rooms/general" />
+                ? <Redirect to="/rooms/s2morning" />
                 : <SignIn />
             )}
           />
@@ -79,7 +79,7 @@ class App extends Component {
           <Route
             render={() => (
               this.signedIn()
-                ? <Redirect to="/rooms/general" />
+                ? <Redirect to="/rooms/s2morning" />
                 : <Redirect to="/sign-in" />
             )}
           />
