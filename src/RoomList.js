@@ -11,7 +11,8 @@ class RoomList extends Component {
     rooms: {},
     room: {
         name: 's2morning',
-        description: 'chatter about the actual class'
+        description: 'chatter about the actual class',
+        public: true,
     }
   }
 
@@ -69,6 +70,7 @@ class RoomList extends Component {
                       <RoomLink
                         key={roomName}
                         room={this.state.rooms[roomName]}
+                        user={this.props.user}
                       />
                     ))
                   }
