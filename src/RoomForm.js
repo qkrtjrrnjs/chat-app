@@ -1,11 +1,16 @@
 import React, { Component } from 'react'
 import { StyleSheet, css } from 'aphrodite'
 
+import Select from 'react-select'
+import 'react-select/dist/react-select.css'
+
 class RoomForm extends Component {
     state = {
         room: {
             name: '',
-            description: ''
+            description: '',
+            public: true,
+            members: [],
         },
     }
     
@@ -17,8 +22,31 @@ class RoomForm extends Component {
     
     handleChange = (ev) => {
         const room = {...this.state.room}
-        room[ev.target.name] = ev.target.value
-        this.setState({ room })
+        const target = ev.target
+        const value = target.type === 'checkbox' ? target.checked : target.value
+    
+        room[target.name] = value
+         this.setState({ room })
+    }
+
+    handleSelectChange = (selectedValue) => {
+            const room = {...this.state.room}
+            room.users = selectedValue
+            this.setState({ room })
+        
+            console.log(selectedValue)
+          }
+        
+    users = () => {
+        return Object.keys(this.props.users).map(
+            uid => {
+                const user = this.props.users[uid]
+                return {
+                  value: uid,
+                  label: `${user.displayName} (${user.email})`,
+                }
+            }
+        )
     }
 
     render() {
@@ -55,6 +83,25 @@ class RoomForm extends Component {
                         onChange={this.handleChange}
                     />
                     </p>
+                    {
+                        !this.state.room.public && (
+                            <div>
+                                <label
+                                    htmlFor="users"
+                                    className={css(styles.label)}
+                                >
+                                    Users to add
+                                </label>
+                                <Select
+                                    name="users"
+                                    multi
+                                    value={this.state.room.users}
+                                    options={this.users()}
+                                    onChange={this.handleSelectChange}
+                                />
+                            </div>
+                        )
+                    }
                     <div className={css(styles.buttonContainer)}>
                     <button
                         type="button"

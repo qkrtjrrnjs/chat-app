@@ -11,7 +11,7 @@ class App extends Component {
     user: {},
   }
 
-  componentWillMount() {
+  componentDidMount() {
     const user = JSON.parse(localStorage.getItem('user'))
 
     if (user) {
