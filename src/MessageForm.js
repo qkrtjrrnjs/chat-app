@@ -31,7 +31,7 @@ class MessageForm extends Component{
         if(this.state.body === ''){
             //Do nothing
         }else{ 
-            const ampm = (Time.getHours >= 12) ? 'PM':'AM'
+            const ampm = (Time.getHours() >= 12) ? 'PM':'AM'
             this.state.time+=` ${getHours()}:${getMinutes()} ${ampm}` //this.state.time+=
             this.props.addMessage(this.state.body, this.state.time)
         }
