@@ -61,7 +61,7 @@ class Chat extends Component{
                 className="Chat"
                 style={styles.Chat}
             >
-                <ChatHeader room={this.props.room}/>
+                <ChatHeader room={this.props.room} removeRoom={this.props.removeRoom}/>
                 <MessageList 
                     messages={this.state.messages} 
                     room={this.props.room}/>
