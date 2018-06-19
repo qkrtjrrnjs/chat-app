@@ -59,6 +59,17 @@ class RoomForm extends Component {
                     onSubmit={this.handleSubmit}
                 >
                 <p>
+              <label className={css(styles.label)}>
+                    <input
+                        type="checkbox"
+                        name="public"
+                        checked={this.state.room.public}
+                        onChange={this.handleChange}
+                    />
+                        Public
+                    </label>
+                </p>
+                <p>
                     <label htmlFor="name" className={css(styles.label)}>
                         Room Name
                     </label>
@@ -83,6 +94,7 @@ class RoomForm extends Component {
                         onChange={this.handleChange}
                     />
                     </p>
+
                     {
                         !this.state.room.public && (
                             <div>
