@@ -35,6 +35,7 @@ const styles = {
         padding: '0 1rem',
         display: 'flex',
         alignItems: 'center',
+        justifyContent: 'space-between',
     },
       
     H2: {
