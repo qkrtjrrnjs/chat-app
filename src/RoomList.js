@@ -43,6 +43,7 @@ class RoomList extends Component {
               <RoomForm
                   addRoom={this.addRoom}
                   {...navProps}
+                  users={this.props.users}
               />
             )
           }

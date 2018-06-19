@@ -4,11 +4,12 @@ import { Route, Switch, Redirect } from 'react-router-dom'
 import './App.css';
 import Main from './Main'
 import SignIn from './SignIn'
-import {auth} from './base'
+import base, {auth} from './base'
 
 class App extends Component {
   state = {
     user: {},
+    users:{},
   }
 
   componentDidMount() {
@@ -17,6 +18,14 @@ class App extends Component {
     if (user) {
       this.setState({ user })
     }
+
+    base.syncState(
+      'users',
+      {
+        context: this,
+        state: 'users',
+      }
+    )
 
     auth.onAuthStateChanged(
       user => {
@@ -34,8 +43,15 @@ class App extends Component {
       email: oauthUser.email,
       uid: oauthUser.uid,
       displayName: oauthUser.displayName,
+      photoUrl: oauthUser.photoURL,
     }
-    this.setState({ user })
+
+    // Add/update the user in the list
+    const users = {...this.state.users}
+    users[user.uid] = user
+ 
+    // Update state and localStorage
+    this.setState({ user, users })
     localStorage.setItem('user', JSON.stringify(user))
   }
 
@@ -53,6 +69,13 @@ class App extends Component {
   }
 
   render() {
+
+    const mainProps = {
+            user: this.state.user,
+            signOut: this.signOut,
+            users: this.state.users,
+    }
+
     return (
       <div className="App">
         <Switch>
@@ -69,8 +92,7 @@ class App extends Component {
             render={navProps => (
               this.signedIn()
               ? <Main
-                  user={this.state.user}
-                  signOut={this.signOut}
+                  {...mainProps}
                   {...navProps}
                 />
               : <Redirect to="/sign-in" />
