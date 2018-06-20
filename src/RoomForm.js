@@ -10,7 +10,7 @@ class RoomForm extends Component {
             name: '',
             description: '',
             public: true,
-            members: [],
+            users: [],
         },
     }
     

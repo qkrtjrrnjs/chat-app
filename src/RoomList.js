@@ -10,7 +10,7 @@ class RoomList extends Component {
   state = {
     rooms: {},
     room: {
-        name: 's2morning',
+        name: 'general',
         description: 'chatter about the actual class',
         public: true,
     }
