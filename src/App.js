@@ -10,7 +10,7 @@ class App extends Component {
 
   constructor() {
     super()
-    
+
     const user = JSON.parse(localStorage.getItem('user')) || {}
     this.state = {
       user,
@@ -83,7 +83,7 @@ class App extends Component {
             path="/sign-in"
             render={navProps => (
               this.signedIn()
-                ? <Redirect to="/rooms/general" />
+                ? <Redirect to="/rooms/openchat" />
                 : <SignIn />
             )}
           />
@@ -101,7 +101,7 @@ class App extends Component {
           <Route
             render={() => (
               this.signedIn()
-                ? <Redirect to="/rooms/general" />
+                ? <Redirect to="/rooms/openchat" />
                 : <Redirect to="/sign-in" />
             )}
           />

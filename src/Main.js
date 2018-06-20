@@ -11,7 +11,12 @@ class Main extends Component{
 
      this.state = {
         room: {},
-        rooms: {}
+        rooms: {},
+        default: {  
+          name: 'openchat',
+          description: 'public chat room',
+          public: true,
+        }
       }
     }
 
@@ -27,6 +32,7 @@ class Main extends Component{
           },       
         }
       )
+      this.addRoom(this.state.default)
     }
             
 
