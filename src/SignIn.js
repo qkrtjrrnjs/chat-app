@@ -16,15 +16,9 @@ class SignIn extends Component{
         //
     }
 
-    authenticate = () => {
-      auth.signInWithPopup(googleProvider)
+    authenticate = (provider) => {
+      auth.signInWithPopup(provider)
     }
-    
-    authenticateWithFacebook = () => {
-      auth.signInWithPopup(facebookProvider)
-    }
-
-
 
     render() {
       return(
@@ -59,7 +53,7 @@ class SignIn extends Component{
             <button
               type="button"
               className={css(styles.button)}
-              onClick={this.authenticate}
+              onClick={() => this.authenticate(googleProvider)}
             >
               <i className={`fab fa-google ${css(styles.brandIcon)}`}></i>
               Sign in with Google
@@ -67,7 +61,7 @@ class SignIn extends Component{
             <button
               type="button"
               className={css(styles.button)}
-              onClick={this.authenticateWithFacebook}
+              onClick={() => this.authenticate(facebookProvider)}
             >
               <i class={`fab fa-facebook-f ${css(styles.brandIcon2)}`}></i>
               Sign in with Facebook
