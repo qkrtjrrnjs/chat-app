@@ -4,14 +4,14 @@ import { NavLink } from 'react-router-dom'
 
 const RoomLink = ({ room, user }) => {
 
-    const userValidation = () =>{
+    /*const userValidation = () =>{
       for (let i = 0; i < room.members.length; i++) {
         if(room.members[i].value === user.uid){
           return true
         }
       }
       return false
-    }
+    }*/
 
     return (
       
@@ -20,9 +20,10 @@ const RoomLink = ({ room, user }) => {
           to={`/rooms/${room.name}`}
           className={css(styles.link)}
         >
-        <div>
+          {room.name}
+        {/*<div>
           { (room.public) ? '#' + room.name: (userValidation()) ? '#' + room.name: '' }
-        </div>
+        </div>*/}
         </NavLink>
       </li>
     )
