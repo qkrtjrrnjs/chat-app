@@ -41,16 +41,13 @@ class RoomForm extends Component {
         return Object.keys(this.props.users).map(
             uid => {
                 const user = this.props.users[uid]
-                return {
-                  value: uid,
-                  label: `${user.displayName} (${user.email})`,
-                }
+                    return {
+                        value: uid,
+                        label: `${user.displayName} (${user.email})`,
+                    }
+                
             }
         )
-    }
-
-    ignoreCurrentUser = () =>{
-        
     }
 
     render() {
@@ -111,9 +108,7 @@ class RoomForm extends Component {
                                 <Select
                                     name="members"
                                     multi
-                                    value={
-                                        this.state.room.members
-                                    }
+                                    value={this.state.room.members}
                                     options={this.users()}
                                     onChange={this.handleSelectChange}
                                 />

@@ -5,8 +5,8 @@ import { NavLink } from 'react-router-dom'
 const RoomLink = ({ room, user }) => {
 
     const userValidation = () =>{
-      for (let i = 0; i < room.users.length; i++) {
-        if(room.users[i].value === user.uid){
+      for (let i = 0; i < room.members.length; i++) {
+        if(room.members[i].value === user.uid){
           return true
         }
       }
