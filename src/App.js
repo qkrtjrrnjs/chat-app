@@ -7,18 +7,17 @@ import SignIn from './SignIn'
 import base, {auth} from './base'
 
 class App extends Component {
-  state = {
-    user: {},
-    users:{},
+  
+  constructor() {
+    super()
+    const user = JSON.parse(localStorage.getItem('user'))
+    this.state = {
+      user,
+      users:{},
+    }
   }
 
   componentDidMount() {
-    const user = JSON.parse(localStorage.getItem('user'))
-
-    if (user) {
-      this.setState({ user })
-    }
-
     base.syncState(
       'users',
       {
