@@ -21,10 +21,7 @@ const RoomLink = ({ room, user }) => {
           className={css(styles.link)}
         >
         <div>
-          {
-            (room.public) ? '#' + room.name: (userValidation()) ? '#' + room.name: ''
-          }
-
+          { (room.public) ? '#' + room.name: (userValidation()) ? '#' + room.name: '' }
         </div>
         </NavLink>
       </li>
