@@ -7,14 +7,6 @@ class SignIn extends Component{
     state = {
         email: '',
     }
-    
-    handleChange = (ev) => {
-        this.setState({ email: ev.target.value })
-    }
-    
-    handleSubmit = (ev) => {
-        //
-    }
 
     authenticate = (provider) => {
       auth.signInWithPopup(provider)
@@ -35,20 +27,6 @@ class SignIn extends Component{
             onSubmit={this.handleSubmit}
           >
             <h1>Welcome!</h1>
-            {/* <label htmlFor="email" className={css(styles.label)}>
-              Email
-            </label>
-            <input
-              type="email"
-              name="email"
-              className={css(styles.input)}
-              onChange={this.handleChange}
-              autoFocus
-            />
-            <button type="submit" className={css(styles.button)}>
-              Sign In
-            </button>
-            <div>or</div> */}
 
             <button
               type="button"
