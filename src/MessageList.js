@@ -33,14 +33,13 @@ class MessageList extends Component{
 const styles = {
     MessageList: {
         backgroundColor: '#c3d7df',
-        flex: '1',
+        flex: 1,
         paddingBottom: '1rem',
         overflowY: 'scroll',
-        paddingLeft: '1.5rem',
     },
 
     Annoucement: {
-        padding: '2rem 1rem',
+        padding: '2rem 1rem 10rem',
     },
     
     H3: {
