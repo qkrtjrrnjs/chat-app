@@ -53,6 +53,7 @@ class MessageForm extends Component{
                 style={styles.MessageForm}
             >
                 <input 
+                    required
                     type="text" 
                     name="body" 
                     placeholder="Message" 
