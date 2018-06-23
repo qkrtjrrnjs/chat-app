@@ -21,8 +21,8 @@ class MessageList extends Component{
                    <h3 style={styles.h3}>#{room.name}</h3>
                     <p>This is the very beginning of the #{room.name} room.</p>
               </div>
-             {
-                  messages.map(msg => <Message key={msg.id} message={msg} />)
+              {
+                  messages.map(msg => <Message key={msg.id} message={msg} addReaction={this.props.addReaction} />)
               }
               <div className="end" ref={el=> this.messagesEnd = el}></div>
           </div>
